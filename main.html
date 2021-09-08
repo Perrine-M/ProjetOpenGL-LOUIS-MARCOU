@@ -1,0 +1,108 @@
+<html>
+
+<head>
+	<title>WebGL - Canvas test</title>
+	<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<!------------------------------------------------------------------->
+	<script type="text/javascript" src="glMatrix.js"></script>
+	<script type="text/javascript" src="callbacks.js"></script>
+	<script type="text/javascript" src="glCourseBasis.js"></script>
+<!------------------------------------------------------------------->
+
+</head>
+
+
+<body onload="webGLStart();">
+	<canvas id="WebGL-test" style="border:none;" width="600" height="600"></canvas>
+	<br><br>
+	<div class="slidecontainer">
+      
+    <fieldset>
+        <legend><strong> Material Type </strong></legend>
+        <label> Transparence : <br></label> 
+        <input type="range" min="1" step="1" max="100" value="50" oninput="transparence(value);" id="tran" class="slider">
+        <span id="demo"></span><br>
+        <label> Coupe : <br></label> 
+        <input type="range" min="1" step="1" max="128" value="128" oninput="coupe(value);" id="coupes" class="slider">
+        <span id="demo2"></span><br>
+        <label> Seuil : <br></label> 
+        <input type="range" min="1" step="1" max="100" value="50" oninput="seuil(value);" id="seuils" class="slider">
+        <span id="demo3"></span><br><br>
+
+        <div>
+          <input type="color" id="colors1" name="col1"
+           oninput="FausseCol1()" value="#FF0000">
+          <label for="color1">Couleur 1</label>
+        </div>
+
+        <div>
+          <input type="color" id="colors2" name="col2"
+            oninput="FausseCol2()" value="#00FF00">
+          <label for="color2">Couleur 2</label>
+        </div>
+
+        <div>
+          <input type="color" id="colors3" name="col3"
+            oninput="FausseCol3()" value="#0000FF">
+          <label for="color3">Couleur 3</label>
+        </div>
+
+        <div>
+          <input type="color" id="colors4" name="col4"
+            oninput="FausseCol4()" value="#7F7FFF">
+          <label for="color4">Couleur 4</label>
+        </div>
+
+        <div>
+          <input type="color" id="colors5" name="col5"
+            oninput="FausseCol5()" value="#33CCFF">
+          <label for="color5">Couleur 5</label>
+        </div>
+	     
+       
+       <br><br>
+     </fieldset>
+    </div>
+
+	<br><br>
+	<button type="button" onclick="loadShaders('shader')">Load Shaders</button>
+</body>
+<style>
+	.slidecontainer {
+  font-family: Optima, sans-serif;
+ 
+}
+fieldset {
+  margin-top: -500px;
+  margin-left: 900px;
+  background-color: #D3D3D3;
+  width: 250px;
+  border-radius: 3px;
+  padding:20px;
+ 
+}
+
+legend {
+  font-size:18px;
+}
+label {
+ font-size:16px;
+}
+
+.slider {
+
+}
+
+#demo {
+  float: right;
+}
+#demo2 {
+  float: right;
+}
+#demo3 {
+  float: right;
+}
+</style>
+
+</html>
